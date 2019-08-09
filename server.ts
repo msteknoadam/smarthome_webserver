@@ -59,12 +59,6 @@ io.on("connection", socket => {
 			);
 		}
 	});
-	socket.on("set_lights", newState => {
-		setState("lights", newState);
-	});
-	socket.on("set_climax", newState => {
-		setState("climax", newState);
-	});
 	socket.on("disconnect", () => {
 		console.log(`Dropped connection: ${socket.id}`);
 	});
