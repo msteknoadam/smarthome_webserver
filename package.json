@@ -4,7 +4,7 @@
 	"description": "This is the repo for Smart Home Project's webserver files.",
 	"main": "server.ts",
 	"scripts": {
-		"start": "nodemon --exec node_modules/.bin/ts-node -- ./server.ts"
+		"start": "nodemon --exec node_modules/.bin/ts-node -- ./server/server.ts"
 	},
 	"repository": {
 		"type": "git",
