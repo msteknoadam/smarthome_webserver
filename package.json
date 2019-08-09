@@ -1,0 +1,33 @@
+{
+	"name": "smarthome_webserver",
+	"version": "1.0.0",
+	"description": "This is the repo for Smart Home Project's webserver files.",
+	"main": "server.ts",
+	"scripts": {
+		"start": "nodemon --exec node_modules/.bin/ts-node -- ./server.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/msteknoadam/smarthome_webserver.git"
+	},
+	"keywords": [
+		"socketio"
+	],
+	"author": "TEKNO",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/msteknoadam/smarthome_webserver/issues"
+	},
+	"homepage": "https://github.com/msteknoadam/smarthome_webserver#readme",
+	"devDependencies": {
+		"typescript": "^3.5.3"
+	},
+	"dependencies": {
+		"@types/express": "^4.17.0",
+		"@types/socket.io": "^2.1.2",
+		"express": "^4.17.1",
+		"nodemon": "^1.19.1",
+		"socket.io": "^2.2.0",
+		"ts-node": "^8.3.0"
+	}
+}
