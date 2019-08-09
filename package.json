@@ -4,7 +4,10 @@
 	"description": "This is the repo for Smart Home Project's webserver files.",
 	"main": "server.ts",
 	"scripts": {
-		"start": "nodemon --exec node_modules/.bin/ts-node -- ./server/server.ts"
+		"install:server": "npm i",
+		"install:raspclient": "python3 -m pip install --upgrade -r ./raspberryclient/requirements.txt",
+		"start:server": "nodemon --exec node_modules/.bin/ts-node -- ./server/server.ts",
+		"start:raspiclient": "python3 ./raspberryclient/client.py"
 	},
 	"repository": {
 		"type": "git",
