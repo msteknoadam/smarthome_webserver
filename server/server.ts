@@ -13,7 +13,7 @@ let currentStates = {
 	climax: "off"
 };
 
-const setState = (key, newState) => {
+const setState = (key: string, newState: string) => {
 	if (currentStates[key]) {
 		let response = {};
 		currentStates[key] = newState;
@@ -24,12 +24,13 @@ const setState = (key, newState) => {
 };
 
 app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "client", "/index.html"));
+	res.sendFile(path.join(__dirname, "..", "client", "/index.html"));
 });
 
 app.get("*", (req, res) => {
-	fs.exists(path.join(__dirname, "client", req.path), exists => {
-		if (exists) res.sendFile(path.join(__dirname, "client", req.path));
+	fs.exists(path.join(__dirname, "..", "client", req.path), exists => {
+		if (exists)
+			res.sendFile(path.join(__dirname, "..", "client", req.path));
 		else
 			res.status(404).send(
 				`<center>

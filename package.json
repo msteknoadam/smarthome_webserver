@@ -5,9 +5,9 @@
 	"main": "server.ts",
 	"scripts": {
 		"install:server": "npm i",
-		"install:raspclient": "python3 -m pip install --upgrade -r ./raspberryclient/requirements.txt",
+		"install:raspiclient": "cd raspberryclient && npm i",
 		"start:server": "nodemon --exec node_modules/.bin/ts-node -- ./server/server.ts",
-		"start:raspiclient": "python3 ./raspberryclient/client.py"
+		"start:raspiclient": "nodemon --exec node_modules/.bin/ts-node -- ./raspberryclient/client.ts"
 	},
 	"repository": {
 		"type": "git",
