@@ -6,8 +6,8 @@
 	"scripts": {
 		"install:server": "npm i",
 		"install:raspiclient": "cd raspberryclient && npm i",
-		"start:server": "nodemon --exec node_modules/.bin/ts-node -- ./server/server.ts",
-		"start:raspiclient": "nodemon --exec node_modules/.bin/ts-node -- ./raspberryclient/client.ts"
+		"start:server": "nodemon --ignore client/ --ignore raspberryclient --exec node_modules/.bin/ts-node -- ./server/server.ts",
+		"start:raspiclient": "nodemon --ignore client/ --ignore server/ --exec node_modules/.bin/ts-node -- ./raspberryclient/client.ts"
 	},
 	"repository": {
 		"type": "git",
