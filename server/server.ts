@@ -8,14 +8,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-let currentStates = {
+let currentStates: { [s: string]: string } = {
 	lights: "on",
 	climax: "off"
 };
 
 const setState = (key: string, newState: string) => {
 	if (currentStates[key]) {
-		let response = {};
+		let response: { [s: string]: string } = {};
 		currentStates[key] = newState;
 		response[key] = newState;
 		io.emit("stateChange", response);

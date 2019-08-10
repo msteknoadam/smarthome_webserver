@@ -5,9 +5,14 @@
 	"main": "server.ts",
 	"scripts": {
 		"install:server": "npm i",
+		"install:webclient": "cd client && npm i",
 		"install:raspiclient": "cd raspberryclient && npm i",
-		"start:server": "nodemon --ignore client/ --ignore raspberryclient --exec node_modules/.bin/ts-node -- ./server/server.ts",
-		"start:raspiclient": "nodemon --ignore client/ --ignore server/ --exec node_modules/.bin/ts-node -- ./raspberryclient/client.ts"
+		"dev:server": "nodemon --ignore client/ --ignore raspberryclient --exec node_modules/.bin/ts-node -- ./server/server.ts",
+		"dev:webclient": "webpack --config ./webpack.client.config.js --watch",
+		"dev:raspiclient": "nodemon --ignore client/ --ignore server/ --exec node_modules/.bin/ts-node -- ./raspberryclient/client.ts",
+		"start:server": "node_modules/.bin/ts-node -- ./server/server.ts",
+		"start:webclient": "webpack --config ./webpack.client.config.js",
+		"start:raspiclient": "node_modules/.bin/ts-node -- ./raspberryclient/client.ts"
 	},
 	"repository": {
 		"type": "git",
@@ -31,6 +36,9 @@
 		"express": "^4.17.1",
 		"nodemon": "^1.19.1",
 		"socket.io": "^2.2.0",
-		"ts-node": "^8.3.0"
+		"ts-loader": "^6.0.4",
+		"ts-node": "^8.3.0",
+		"webpack": "^4.39.1",
+		"webpack-cli": "^3.3.6"
 	}
 }
